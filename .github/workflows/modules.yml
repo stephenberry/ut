@@ -22,8 +22,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - runs_on: windows-2025-vs2026
-            compiler: msvc-14.50
+          - runs_on: windows-2025
+            compiler: msvc
             configure_preset: "x64-vs"
             build_preset: "x64-vs-build"
             test_preset : "x64-vs-test"
@@ -45,10 +45,8 @@ jobs:
 
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-    - uses: lukka/get-cmake@4a7d025fc60f00db0c7b44ebf783d19b52444830 # v4.4.1
-
     - name: "Build & Test"
-      uses: lukka/run-cmake@5d55ea7949e25f69f0ecb516d8d572297e03a956 # v10.9
+      uses: lukka/run-cmake@338027a0ca347414b3abaa50a883bdc2b91d1812 # v10.9
       env:
           CC: ${{ matrix.cc }}
           CXX: ${{ matrix.cxx }}
