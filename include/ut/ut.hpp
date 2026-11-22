@@ -297,7 +297,7 @@ namespace ut
       ut::outputter<decltype(stream)> outputter{stream};
       ut::reporter<decltype(outputter)> reporter{outputter};
       ut::runner<decltype(reporter)> runner{reporter};
-   } cfg;
+   } cfg{};
 
    constexpr struct
    {
